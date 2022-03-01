@@ -37,6 +37,7 @@ dependencies:
   flutter_localizations: # Add this line for localization
     sdk: flutter
   intl: ^0.17.0
+  get: ^4.6.1
 
 dev_dependencies:
   flutter_test:

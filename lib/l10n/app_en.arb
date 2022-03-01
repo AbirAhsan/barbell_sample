@@ -1,6 +1,5 @@
 {
+    "homeTitle": "Home Screen",
     "buttonName": "Next Screen",
-    "@buttonName": {
-        "description": "To View Details Go to Next Screen"
-    }
+    "buttonDescription": "To View Details Go to Next Screen"
 }
