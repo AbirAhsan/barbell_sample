@@ -176,22 +176,124 @@ class ProductMainScreen extends StatelessWidget {
                                                         .length,
                                                     itemBuilder:
                                                         (context, index) {
-                                                      return Container(
-                                                        height: 80,
-                                                        margin: const EdgeInsets
-                                                            .all(5),
+                                                      return Padding(
                                                         padding:
                                                             const EdgeInsets
-                                                                .all(5),
-                                                        child: ListTile(
-                                                          leading: Image.asset(
-                                                            "assets/sample.png",
-                                                            height: 50,
-                                                            width: 80,
+                                                                .all(5.0),
+                                                        child: Card(
+                                                          child: Container(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .all(5),
+                                                            child: ListTile(
+                                                              leading:
+                                                                  Image.asset(
+                                                                "assets/sample.png",
+                                                                height: 80,
+                                                                width: 80,
+                                                              ),
+                                                              title: Text(
+                                                                subcategory[
+                                                                        "productList"]
+                                                                    [
+                                                                    index]["name"],
+                                                                overflow:
+                                                                    TextOverflow
+                                                                        .ellipsis,
+                                                              ),
+                                                              subtitle: Column(
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceBetween,
+                                                                children: [
+                                                                  Text(subcategory[
+                                                                              "productList"]
+                                                                          [
+                                                                          index]
+                                                                      [
+                                                                      "subname"]),
+                                                                  Row(
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    children: [
+                                                                      Column(
+                                                                        children: const [
+                                                                          Text(
+                                                                            "12",
+                                                                            style:
+                                                                                TextStyle(fontSize: 9.0),
+                                                                          ),
+                                                                          Text(
+                                                                            "بروتين",
+                                                                            style:
+                                                                                TextStyle(fontSize: 9.0),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                      Column(
+                                                                        children: const [
+                                                                          Text(
+                                                                            "13",
+                                                                            style:
+                                                                                TextStyle(fontSize: 9.0),
+                                                                          ),
+                                                                          Text(
+                                                                            "بروتين",
+                                                                            style:
+                                                                                TextStyle(fontSize: 9.0),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                      Column(
+                                                                        children: const [
+                                                                          Text(
+                                                                            "14",
+                                                                            style:
+                                                                                TextStyle(fontSize: 9.0),
+                                                                          ),
+                                                                          Text(
+                                                                            "بروتين",
+                                                                            style:
+                                                                                TextStyle(fontSize: 9.0),
+                                                                          ),
+                                                                        ],
+                                                                      )
+                                                                    ],
+                                                                  )
+                                                                ],
+                                                              ),
+                                                              isThreeLine: true,
+                                                              trailing: Column(
+                                                                children: const [
+                                                                  Card(
+                                                                    color:
+                                                                        limeblack,
+                                                                    child:
+                                                                        Padding(
+                                                                      padding:
+                                                                          EdgeInsets.all(
+                                                                              5.0),
+                                                                      child:
+                                                                          Text(
+                                                                        "320",
+                                                                        style: TextStyle(
+                                                                            color:
+                                                                                white,
+                                                                            fontSize:
+                                                                                12),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Icon(
+                                                                    Icons
+                                                                        .add_box_rounded,
+                                                                    color: red,
+                                                                  )
+                                                                ],
+                                                              ),
+                                                            ),
                                                           ),
-                                                          title: Text(subcategory[
-                                                                  "productList"]
-                                                              [index]["name"]),
                                                         ),
                                                       );
                                                     });
