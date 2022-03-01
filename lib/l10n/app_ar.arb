@@ -1,5 +1,8 @@
 {
     "homeTitle": "الشاشة الرئيسية",
     "buttonName": "الشاشة التالية",
-    "buttonDescription": "لعرض التفاصيل ، انتقل إلى الشاشة التالية"
+    "buttonDescription": "لعرض التفاصيل ، انتقل إلى الشاشة التالية",
+    "productScreenTitle": "الوجبات",
+    "searchIcon": "امر تدلل وش تحتاج",
+    "dropdownButton": "عناصر غذائية"
 }

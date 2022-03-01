@@ -1,5 +1,8 @@
 {
     "homeTitle": "Home Screen",
     "buttonName": "Next Screen",
-    "buttonDescription": "To View Details Go to Next Screen"
+    "buttonDescription": "To View Details Go to Next Screen",
+    "productScreenTitle": "Meals",
+    "searchIcon": "something pampering what you need",
+    "dropdownButton": "food elements"
 }
