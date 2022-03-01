@@ -231,7 +231,7 @@ class ProfileScreen extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                             border: Border.all(
-                              color: grey,
+                              color: red,
                             ),
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(5))),
@@ -239,6 +239,7 @@ class ProfileScreen extends StatelessWidget {
                         margin: const EdgeInsets.all(10.0),
                         child: Text(
                           AppLocalizations.of(context)!.overWeight,
+                          style: const TextStyle(fontSize: 20, color: red),
                         ),
                       ),
                       Container(
@@ -252,6 +253,7 @@ class ProfileScreen extends StatelessWidget {
                         margin: const EdgeInsets.all(10.0),
                         child: Text(
                           AppLocalizations.of(context)!.weightLoss,
+                          style: const TextStyle(fontSize: 20),
                         ),
                       ),
                       Container(
@@ -265,11 +267,12 @@ class ProfileScreen extends StatelessWidget {
                         margin: const EdgeInsets.all(10.0),
                         child: Text(
                           AppLocalizations.of(context)!.weightStability,
+                          style: const TextStyle(fontSize: 20),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   //<========= Location
@@ -282,7 +285,7 @@ class ProfileScreen extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                             border: Border.all(
-                              color: grey,
+                              color: red,
                             ),
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(5))),
@@ -290,12 +293,16 @@ class ProfileScreen extends StatelessWidget {
                         margin: const EdgeInsets.all(10.0),
                         child: Row(
                           children: [
-                            const Icon(Icons.home_filled),
+                            const Icon(
+                              Icons.home_filled,
+                              color: red,
+                            ),
                             const SizedBox(
                               width: 10,
                             ),
                             Text(
                               AppLocalizations.of(context)!.home,
+                              style: const TextStyle(fontSize: 22, color: red),
                             ),
                           ],
                         ),
@@ -317,13 +324,16 @@ class ProfileScreen extends StatelessWidget {
                             ),
                             Text(
                               AppLocalizations.of(context)!.gym,
+                              style: TextStyle(
+                                fontSize: 22,
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
@@ -342,6 +352,7 @@ class ProfileScreen extends StatelessWidget {
                             AppLocalizations.of(context)!.schedule,
                             style: const TextStyle(
                               color: Colors.red,
+                              fontSize: 22,
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -360,6 +371,7 @@ class ProfileScreen extends StatelessWidget {
                           child: Text(
                             AppLocalizations.of(context)!.eatingTable,
                             style: const TextStyle(
+                              fontSize: 22,
                               color: Colors.red,
                             ),
                             textAlign: TextAlign.center,
