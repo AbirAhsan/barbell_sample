@@ -1,3 +1,4 @@
+import 'package:barbell/list.dart';
 import 'package:barbell/views/variable/colors.dart';
 import 'package:barbell/views/variable/text_style.dart';
 import 'package:flutter/material.dart';
@@ -84,6 +85,119 @@ class ProductMainScreen extends StatelessWidget {
                             });
                       },
                     ),
+
+                    //<<================== Main Category Tabbar
+                    DefaultTabController(
+                        length: meals.length,
+                        child: Expanded(
+                          child: ListView(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            children: [
+                              TabBar(
+                                  //  controller: scrCtrl.tabController,
+                                  isScrollable: true,
+                                  automaticIndicatorColorAdjustment: true,
+                                  indicatorSize: TabBarIndicatorSize.tab,
+                                  labelColor: white,
+                                  labelStyle: normalBoldStyle,
+                                  unselectedLabelColor: limeblack,
+                                  indicator: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    color: red,
+                                  ),
+                                  indicatorColor: white,
+                                  padding: const EdgeInsets.only(bottom: 5),
+                                  //   labelPadding: EdgeInsets.only(left: 10, right: 10),
+
+                                  tabs: meals.map<Widget>((category) {
+                                    return Tab(
+                                      text: category["title"],
+                                    );
+                                  }).toList()),
+                              SizedBox(
+                                height: _height,
+                                child: TabBarView(
+                                  children: meals.map<Widget>((category) {
+                                    //<=============== Sub Category Tabbar Start
+                                    return DefaultTabController(
+                                      length:
+                                          category["subcategoryList"].length,
+                                      child: Column(
+                                        children: [
+                                          SizedBox(
+                                            height: 50,
+                                            child: TabBar(
+                                                isScrollable: true,
+                                                automaticIndicatorColorAdjustment:
+                                                    true,
+                                                indicatorSize:
+                                                    TabBarIndicatorSize.tab,
+                                                labelColor: white,
+                                                labelStyle: normalRegularStyle,
+                                                unselectedLabelColor: limeblack,
+                                                indicator: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  color: red,
+                                                ),
+                                                indicatorColor: white,
+                                                padding: const EdgeInsets.only(
+                                                    bottom: 5),
+                                                tabs:
+                                                    category["subcategoryList"]
+                                                        .map<Widget>(
+                                                            (subcategory) {
+                                                  return Tab(
+                                                    text:
+                                                        subcategory["subtitle"],
+                                                  );
+                                                }).toList()),
+                                          ),
+                                          Expanded(
+                                            child: TabBarView(
+                                                children:
+                                                    category["subcategoryList"]
+                                                        .map<Widget>(
+                                                            (subcategory) {
+                                              return ListView.builder(
+                                                  shrinkWrap: true,
+                                                  itemCount:
+                                                      subcategory["productList"]
+                                                          .length,
+                                                  itemBuilder:
+                                                      (context, index) {
+                                                    return Container(
+                                                      height: 80,
+                                                      margin:
+                                                          const EdgeInsets.all(
+                                                              5),
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              5),
+                                                      child: ListTile(
+                                                        leading: Image.asset(
+                                                          "assets/sample.png",
+                                                          height: 50,
+                                                          width: 80,
+                                                        ),
+                                                        title: Text(subcategory[
+                                                                "productList"]
+                                                            [index]["name"]),
+                                                      ),
+                                                    );
+                                                  });
+                                            }).toList()),
+                                          )
+                                        ],
+                                      ),
+                                    );
+                                  }).toList(),
+                                ),
+                              )
+                            ],
+                          ),
+                        ))
                   ],
                 )),
           ),
