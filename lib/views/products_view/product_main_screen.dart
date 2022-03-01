@@ -1,9 +1,11 @@
 import 'package:barbell/list.dart';
+import 'package:barbell/services/page_navigation_service.dart';
+import 'package:barbell/views/profile/profile_screen.dart';
 import 'package:barbell/views/variable/colors.dart';
 import 'package:barbell/views/variable/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:get/get.dart';
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../controller/animation_controller.dart';
 import 'search_and_dropdown_animation.dart';
@@ -27,10 +29,11 @@ class ProductMainScreen extends StatelessWidget {
               AppLocalizations.of(context)!.productScreenTitle,
               style: titleBoldStyleWithWhite,
             ),
-            actions: const [
+            actions: [
               IconButton(
-                  onPressed: null,
-                  icon: Icon(
+                  onPressed: () => PageNavigationService()
+                      .generalPageNavigation(const ProfileScreen()),
+                  icon: const Icon(
                     Icons.apple,
                     color: white,
                   )),
